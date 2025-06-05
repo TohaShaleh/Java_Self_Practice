@@ -1,4 +1,4 @@
-package Com.MyPrograms;
+package Practice_Programs;
 
 class test extends Thread
 {
