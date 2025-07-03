@@ -18,6 +18,16 @@ public class All_in_one {
         } catch (Exception e) {
             System.out.println("General exception: " + e.getMessage());
         }
+        finally {
+            try {
+                if (fr != null) {
+                    fr.close();
+                    System.out.println("FileReader closed successfully.");
+                }
+            } catch (IOException ioe) {
+                System.out.println("Error closing FileReader: " + ioe.getMessage());
+            }
+        }
     }
 
     public static FileReader display() throws FileNotFoundException {
