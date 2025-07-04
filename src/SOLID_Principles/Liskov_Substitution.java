@@ -21,16 +21,15 @@ class FlyingBird extends Bird {
 }
 
 
-// Penguins are birds, but they can't fly, so no fly() method here
 class Penguin extends Bird {
-    // Penguins can eat, so they inherit the eat() method from Bird
+    // Penguins can eat, so they inherit the eat() method from Bird but no fly method used here
     void swim() {
         System.out.println("Swimming");
     }
 }
 
 
-// Sparrows are flying birds, so they inherit both eat() and fly() methods
+// Sparrows are flying birds, so they inherit both eat() and fly() methods by extending FlyingBird
 class Sparrow extends FlyingBird {
 
 }
@@ -38,11 +37,11 @@ class Sparrow extends FlyingBird {
 public class Liskov_Substitution {
     public static void main(String[] args) {
         // Create instances of different birds
-        Bird bird = new Bird();  // General Bird
+        Bird bird = new Bird();
         FlyingBird sparrow = new Sparrow();  // Sparrow is a flying bird
         Bird penguin = new Penguin();  // Penguin is a bird but cannot fly
 
-        // Test: All birds can eat
+
         bird.eat();
         sparrow.eat();
         penguin.eat();
