@@ -1,0 +1,33 @@
+
+** Flow of Git commands if creating any branch : 
+
+1. mkdir practice
+2. cd practice
+3. git init
+4. echo "hello from main branch" > hello.txt
+5. git add hello.txt
+6. git commit -m "initial hello from main"
+7. git remote add origin https://github.com/username/repo.git
+8. git push -u origin main
+9. git checkout -b feature-hello-update
+10. open hello.txt and change to "hello from feature branch baby"
+11. git add hello.txt
+12. git commit -m "update hello in feature branch"
+13. git push -u origin feature-hello-update
+14. git checkout main
+15. git pull
+16. git merge feature-hello-update
+17. git branch -d feature-hello-update
+18. git push
+
+
+ ** Summary: Solving Git conflicts in any workflow
+  * When conflict happens:
+
+1.Open conflicted file(s)
+2.Decide what to keep (main, branch, or both)
+3.Remove conflict markers: <<<<<<Head  =======   >>>>>>
+4.Save, then
+5.git add conflicted_file
+6.git commit
+7.git push
