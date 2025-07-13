@@ -105,6 +105,47 @@ public class ComparatorExample{
 
 
 
+        // Sorting strings at first by lexicographically, then by the length
+        List<String>list2=new ArrayList<>();
+        list2.add("Toha");
+        list2.add("Afrin");
+        list2.add("dewa");
+        list2.add("Pavel");
+        list2.add("Borna");
+        list2.add("china");
+        list2.add("dew");
+
+
+        /*
+        Comparator<String>com2=new Comparator<String>(){
+            public int compare(String s1, String s2) {
+                if(s1.equals(s2))
+                {
+                    return Integer.compare(s1.length(), s2.length());
+                }
+                else
+                {
+                    return s1.compareTo(s2);
+                }
+            }
+        };
+        Collections.sort(list2,com2);
+        */
+
+
+        System.out.println("\nBefore Sorting : "+ list2);
+
+        // By using Lambda expresion
+        Collections.sort(list2, (s1, s2) -> {
+            if (s1.length() == s2.length()) {  // if lengths equal, compare lexicographically
+                return s1.compareTo(s2);
+            } else {
+                return Integer.compare(s1.length(), s2.length());  // else compare by length
+            }
+        });
+
+        System.out.println("\nAfter Sorting : "+ list2);
+
 
 
 
